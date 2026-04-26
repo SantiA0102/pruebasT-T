@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Simulacro Express Saber TyT | Desarrollo Informático</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%232c7da0' d='M184 48l144 0c4.4 0 8 3.6 8 8l0 40L176 96l0-40c0-4.4 3.6-8 8-8zm-56 8l0 40L64 96C28.7 96 0 124.7 0 160l0 96 192 0 128 0 192 0 0-96c0-35.3-28.7-64-64-64l-64 0 0-40c0-30.9-25.1-56-56-56L184 0c-30.9 0-56 25.1-56 56zM512 288l-192 0 0 32c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-32L0 288 0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-128z'/%3E%3C/svg%3E">
+    <title>Simulacro Completo Saber TyT | 50 preguntas + escritura</title>
+    <!-- Favicon en azul (servidor/bd) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231f5e7a' d='M184 48l144 0c4.4 0 8 3.6 8 8l0 40L176 96l0-40c0-4.4 3.6-8 8-8zm-56 8l0 40L64 96C28.7 96 0 124.7 0 160l0 96 192 0 128 0 192 0 0-96c0-35.3-28.7-64-64-64l-64 0 0-40c0-30.9-25.1-56-56-56L184 0c-30.9 0-56 25.1-56 56zM512 288l-192 0 0 32c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-32L0 288 0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-128z'/%3E%3C/svg%3E">
     <style>
         * {
             margin: 0;
@@ -14,104 +14,92 @@
         }
 
         body {
-            background: #f0f4f8;
+            background: #eef2fa;
             font-family: system-ui, 'Segoe UI', 'Roboto', 'Noto Sans', sans-serif;
             padding: 2rem 1rem;
             color: #0a2b3e;
         }
 
         .simulacro-container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-            padding: 1.5rem 1.8rem 2.5rem;
+            box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.2);
+            padding: 1.8rem 2rem 2.5rem;
         }
 
-        /* encabezado */
         .header {
             border-bottom: 3px solid #2c7da0;
-            padding-bottom: 1.2rem;
+            padding-bottom: 1rem;
             margin-bottom: 1.8rem;
         }
 
         h1 {
-            font-size: 1.9rem;
-            background: linear-gradient(135deg, #1f5e7a, #2c7da0);
+            font-size: 2rem;
+            background: linear-gradient(135deg, #1a5a74, #2c7da0);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            letter-spacing: -0.3px;
         }
 
         .badge {
-            display: inline-block;
             background: #e9ecef;
-            padding: 0.3rem 0.8rem;
-            border-radius: 40px;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 500;
-            color: #1e5e7c;
-            margin-top: 0.6rem;
+            display: inline-block;
+            margin-top: 0.5rem;
         }
 
         .instrucciones {
             background: #eef2fb;
             padding: 1rem 1.4rem;
             border-radius: 1rem;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
+            margin: 1.2rem 0 1.8rem 0;
             border-left: 5px solid #2c7da0;
         }
 
-        .instrucciones p {
-            margin: 0.3rem 0;
-        }
-
-        /* secciones */
         .seccion {
-            margin-bottom: 2.5rem;
-            background: #fefefe;
+            margin-bottom: 2.8rem;
+            background: #ffffff;
             border-radius: 1.5rem;
-            transition: all 0.2s;
+            border: 1px solid #e2edf2;
+            padding: 1rem 1.4rem 1.6rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
         }
 
         .seccion-titulo {
             background: #e2eafc;
-            padding: 0.6rem 1.2rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.2rem;
             display: inline-block;
-            font-size: 1.2rem;
+            font-weight: 700;
+            font-size: 1.25rem;
             color: #134b6b;
-            letter-spacing: -0.2px;
+            margin-bottom: 1.2rem;
         }
 
         .pregunta {
-            background: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 1.2rem;
-            padding: 1rem 1.2rem;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-            transition: 0.1s linear;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px dashed #d4dee5;
+            padding-bottom: 1rem;
         }
 
         .pregunta-texto {
             font-weight: 600;
-            margin-bottom: 0.9rem;
-            font-size: 1.05rem;
+            margin-bottom: 0.7rem;
+            font-size: 1rem;
             line-height: 1.4;
         }
 
         .opciones {
             display: flex;
             flex-direction: column;
-            gap: 0.6rem;
-            margin-left: 0.5rem;
+            gap: 0.5rem;
+            margin-left: 0.7rem;
+            margin-top: 0.3rem;
         }
 
         .opcion {
@@ -119,52 +107,54 @@
             align-items: center;
             gap: 0.7rem;
             cursor: pointer;
-            padding: 0.35rem 0.2rem;
-            border-radius: 12px;
-            transition: background 0.1s;
+            padding: 0.2rem 0.2rem;
+            border-radius: 10px;
         }
 
         .opcion:hover {
-            background: #f1f9fe;
+            background: #f0f7fd;
         }
 
         input[type="radio"] {
             accent-color: #2c7da0;
-            width: 1.1rem;
-            height: 1.1rem;
-            margin: 0;
-            flex-shrink: 0;
+            width: 1rem;
+            height: 1rem;
         }
 
         label {
-            font-size: 0.96rem;
+            font-size: 0.92rem;
             color: #1f3b4a;
-            font-weight: 450;
-            line-height: 1.3;
         }
 
-        /* zona de resultados */
+        textarea {
+            width: 100%;
+            border-radius: 1rem;
+            border: 1px solid #cbdde6;
+            padding: 1rem;
+            font-family: inherit;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            resize: vertical;
+        }
+
         .acciones {
-            margin: 2rem 0 1.2rem;
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            align-items: center;
+            margin: 2rem 0 1rem;
             justify-content: space-between;
         }
 
         button {
             background: #2c7da0;
             border: none;
-            color: white;
-            font-weight: bold;
             padding: 0.7rem 1.6rem;
             border-radius: 3rem;
-            font-size: 0.95rem;
+            font-weight: bold;
+            color: white;
             cursor: pointer;
+            font-size: 0.9rem;
             transition: 0.2s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            font-family: inherit;
         }
 
         button:hover {
@@ -176,343 +166,293 @@
             background: #6c757d;
         }
 
-        .btn-reset:hover {
-            background: #495057;
-        }
-
         .resultado-card {
             background: #eef5f9;
             border-radius: 1.6rem;
-            padding: 1.2rem 1.5rem;
-            margin: 1rem 0 1rem;
+            padding: 1.5rem;
+            margin-top: 1rem;
             border-left: 6px solid #2c7da0;
         }
 
         .puntaje {
-            font-size: 1.9rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #144e6e;
-        }
-
-        .interpretacion {
-            margin-top: 0.5rem;
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
-        .feedback-final {
-            margin-top: 0.8rem;
-            font-size: 0.9rem;
-            color: #2d6a4f;
         }
 
         hr {
             margin: 1rem 0;
             border: 0;
             height: 1px;
-            background: #cbd5e1;
+            background: #cbdde6;
         }
 
         footer {
-            margin-top: 1.5rem;
-            font-size: 0.75rem;
             text-align: center;
-            color: #6c757d;
+            font-size: 0.7rem;
+            color: #6f8faa;
+            margin-top: 2rem;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 700px) {
             .simulacro-container {
                 padding: 1rem;
             }
-            .pregunta-texto {
-                font-size: 0.95rem;
-            }
-            label {
-                font-size: 0.88rem;
+            .seccion {
+                padding: 0.8rem;
             }
         }
     </style>
 </head>
 <body>
-<div class="simulacro-container" id="app">
+<div class="simulacro-container">
     <div class="header">
-        <h1>🧪 Simulacro Express — Saber TyT</h1>
-        <div class="badge">Desarrollo Informático | 10 preguntas</div>
+        <h1>🧪 Simulacro Completo — Saber TyT</h1>
+        <div class="badge">50 preguntas + ejercicio de escritura argumentativa | Desarrollo Informático</div>
         <div class="instrucciones">
-            <p>⏱️ Tiempo sugerido: <strong>40–50 minutos</strong> — No uses ayuda externa.</p>
-            <p>✅ Marca una sola respuesta por pregunta. Al finalizar, presiona <strong>“Calificar simulacro”</strong>.</p>
+            ⏱️ Tiempo sugerido: 80–100 minutos · Marca una respuesta por cada pregunta cerrada.<br>
+            ✍️ En la pregunta 31 escribe un texto argumentativo (la calificación es guiada, tú mismo evalúas tu coherencia).
         </div>
     </div>
 
-    <!-- LAS PREGUNTAS SE RENDERIZAN AQUÍ MEDIANTE JS PARA MANTENER CÓDIGO LIMPIO -->
-    <div id="preguntas-holder"></div>
+    <div id="preguntasRoot"></div>
 
     <div class="acciones">
-        <button id="btn-calificar">📝 Calificar simulacro</button>
-        <button id="btn-reiniciar" class="btn-reset">🔄 Reiniciar respuestas</button>
+        <button id="calificarBtn">✅ Calificar simulacro</button>
+        <button id="reiniciarBtn" class="btn-reset">🔄 Reiniciar respuestas</button>
     </div>
-
-    <div id="resultado-area"></div>
-    <footer>
-        Simulacro tipo Saber TyT — Enfocado en lógica, SQL, modelado, hardware y lectura crítica.
-    </footer>
+    <div id="resultadosPanel"></div>
+    <footer>Simulacro estilo Saber TyT — incluye Lectura Crítica, Razonamiento Cuantitativo, Competencias Ciudadanas, Escritura e Inglés.</footer>
 </div>
 
 <script>
     // --------------------------------------------------------------
-    // BASE DE PREGUNTAS con respuestas correctas (índice 0..3)
-    // según el documento proporcionado: respuestas: 1.B 2.C 3.B 4.B 5.B 6.B 7.B 8.B 9.B 10.B
+    // BASE DE PREGUNTAS (50 items) + índice correcto (0-based)
+    // Según clave proporcionada: Lectura(1-10), Cuantit(11-20), Ciudadanas(21-30), Escritura(31 manual), Inglés(32-50)
+    // 📌 CLAVE DADA:
+    // Lectura: 1B,2B,3B,4B,5B,6B,7B,8B,9C,10B  => indices: [1,1,1,1,1,1,1,1,2,1]
+    // Cuantit: 11B,12A,13B,14B,15B,16B,17B,18B,19C,20B => indices: 11B->1,12A->0,13B->1,14B->1,15B->1,16B->1,17B->1,18B->1,19C->2,20B->1
+    // Ciudadanas: 21B,22B,23B,24B,25B,26B,27B,28B,29B,30B => todos indice 1 ( excepto según clave 27B,30B todos B )
+    // Ingles: 32B,33B,34B,35B,36B,37A,38B,39A,40A,41B,42A,43A,44B,45B,46A,47B,48A,49A,50A
     // --------------------------------------------------------------
+    
     const preguntasData = [
-        { // Pregunta 1
-            texto: "1. Un sistema de gestión permite registrar animales, vacunas y lotes. Sin embargo, los usuarios reportan que el sistema es lento al consultar información histórica. ¿Cuál es el problema principal descrito?",
-            opciones: ["A. Falta de funcionalidad", "B. Problema de rendimiento", "C. Error en la interfaz", "D. Falta de usuarios"],
-            correcta: 1   // B
-        },
-        { // Pregunta 2
-            texto: "2. “El uso de bases de datos relacionales permite estructurar la información de manera organizada, evitando redundancias innecesarias.” ¿Cuál es la idea principal?",
-            opciones: ["A. Las bases de datos son difíciles de usar", "B. Las bases de datos eliminan errores humanos", "C. Las bases de datos organizan información eficientemente", "D. Las bases de datos reemplazan a los sistemas"],
-            correcta: 2   // C (índice 2)
-        },
-        { // Pregunta 3
-            texto: "3. ¿Qué imprime el siguiente pseudocódigo?<br><code style='background:#eee;padding:2px 4px;border-radius:6px;'>x = 0<br>para i desde 1 hasta 3:<br>    x = x + i<br>imprimir x</code>",
-            opciones: ["A. 3", "B. 6", "C. 9", "D. 0"],
-            correcta: 1   // B -> 6
-        },
-        { // Pregunta 4
-            texto: "4. ¿Qué hace este código?<br><code style='background:#eee;padding:2px 4px;border-radius:6px;'>si numero % 2 == 0:<br>    imprimir \"Par\"<br>sino:<br>    imprimir \"Impar\"</code>",
-            opciones: ["A. Verifica si un número es positivo", "B. Verifica si un número es par o impar", "C. Suma números", "D. Divide números"],
-            correcta: 1   // B
-        },
-        { // Pregunta 5
-            texto: "5. ¿Cuál consulta muestra los nombres de animales mayores a 2 años?",
-            opciones: [
-                "A. <code>SELECT * FROM animales;</code>",
-                "B. <code>SELECT nombre FROM animales WHERE edad > 2;</code>",
-                "C. <code>DELETE FROM animales WHERE edad > 2;</code>",
-                "D. <code>UPDATE animales SET edad = 2;</code>"
-            ],
-            correcta: 1   // B
-        },
-        { // Pregunta 6
-            texto: "6. ¿Qué hace un JOIN en SQL?",
-            opciones: ["A. Elimina datos", "B. Une tablas relacionadas", "C. Crea tablas nuevas", "D. Ordena registros"],
-            correcta: 1   // B
-        },
-        { // Pregunta 7
-            texto: "7. Si una vaca puede tener muchas vacunas, ¿qué tipo de relación es?",
-            opciones: ["A. Uno a uno", "B. Uno a muchos", "C. Muchos a muchos", "D. Ninguna"],
-            correcta: 1   // B
-        },
-        { // Pregunta 8
-            texto: "8. ¿Qué es una clave primaria (PK)?",
-            opciones: ["A. Un dato repetido", "B. Un identificador único", "C. Una relación entre tablas", "D. Un índice opcional"],
-            correcta: 1   // B
-        },
-        { // Pregunta 9
-            texto: "9. ¿Cuál componente almacena datos de forma permanente?",
-            opciones: ["A. RAM", "B. CPU", "C. Disco duro / SSD", "D. GPU"],
-            correcta: 2   // C es índice 2
-        },
-        { // Pregunta 10
-            texto: "10. ¿Qué hace el sistema operativo?",
-            opciones: ["A. Ejecuta únicamente juegos", "B. Gestiona el hardware y software", "C. Solo almacena datos", "D. Diseña programas"],
-            correcta: 1   // B
-        }
+        // SECCION LECTURA CRITICA (1-10)
+        { texto: "1. ¿Cuál es la idea principal de un texto?", opciones: ["A. Un detalle específico", "B. El tema central", "C. Una opinión secundaria", "D. Un ejemplo"], correcta: 1, seccion: "📘 Lectura Crítica" },
+        { texto: "2. Un texto afirma que “la tecnología mejora la eficiencia pero aumenta la dependencia”. ¿Qué tipo de relación hay?", opciones: ["A. Causa-efecto", "B. Contraste", "C. Secuencia", "D. Enumeración"], correcta: 1, seccion: "📘 Lectura Crítica" },
+        { texto: "3. ¿Qué busca el autor al usar ejemplos?", opciones: ["A. Confundir", "B. Ilustrar ideas", "C. Cambiar el tema", "D. Evadir argumentos"], correcta: 1, seccion: "📘 Lectura Crítica" },
+        { texto: "4. Si una conclusión no se deriva del texto, es:", opciones: ["A. Implícita", "B. Incorrecta", "C. Secundaria", "D. Válida"], correcta: 1, seccion: "📘 Lectura Crítica" },
+        { texto: "5. ¿Qué es una inferencia?", opciones: ["A. Copiar texto", "B. Sacar conclusiones no explícitas", "C. Resumir", "D. Traducir"], correcta: 1, seccion: "📘 Lectura Crítica" },
+        { texto: "6. Un texto argumentativo siempre:", opciones: ["A. Narra historias", "B. Defiende una postura", "C. Describe objetos", "D. Resume ideas"], correcta: 1, seccion: "📘 Lectura Crítica" },
+        { texto: "7. ¿Qué es un argumento?", opciones: ["A. Opinión sin base", "B. Idea respaldada", "C. Ejemplo aislado", "D. Tema general"], correcta: 1, seccion: "📘 Lectura Crítica" },
+        { texto: "8. Si un texto usa datos estadísticos, busca:", opciones: ["A. Decorar", "B. Sustentar", "C. Confundir", "D. Simplificar"], correcta: 1, seccion: "📘 Lectura Crítica" },
+        { texto: "9. El tono del texto puede ser:", opciones: ["A. Solo formal", "B. Solo informal", "C. Variable", "D. Inexistente"], correcta: 2, seccion: "📘 Lectura Crítica" },
+        { texto: "10. Identificar intención del autor implica:", opciones: ["A. Memorizar", "B. Interpretar", "C. Traducir", "D. Copiar"], correcta: 1, seccion: "📘 Lectura Crítica" },
+        // RAZONAMIENTO CUANTITATIVO (11-20) indices clave según arriba
+        { texto: "11. 5 + 3 × 2 =", opciones: ["A. 16", "B. 11", "C. 10", "D. 13"], correcta: 1, seccion: "🔢 Razonamiento Cuantitativo" },
+        { texto: "12. Si un producto cuesta 100 y sube 10%, vale:", opciones: ["A. 110", "B. 120", "C. 105", "D. 100"], correcta: 0, seccion: "🔢 Razonamiento Cuantitativo" },
+        { texto: "13. ¿Qué es una proporción?", opciones: ["A. Suma", "B. Relación entre cantidades", "C. División", "D. Multiplicación"], correcta: 1, seccion: "🔢 Razonamiento Cuantitativo" },
+        { texto: "14. Si 2x = 10, x =", opciones: ["A. 2", "B. 5", "C. 10", "D. 20"], correcta: 1, seccion: "🔢 Razonamiento Cuantitativo" },
+        { texto: "15. Promedio de 2, 4, 6 =", opciones: ["A. 3", "B. 4", "C. 5", "D. 6"], correcta: 1, seccion: "🔢 Razonamiento Cuantitativo" },
+        { texto: "16. 20% de 50 =", opciones: ["A. 5", "B. 10", "C. 15", "D. 20"], correcta: 1, seccion: "🔢 Razonamiento Cuantitativo" },
+        { texto: "17. Si una gráfica sube, indica:", opciones: ["A. Disminución", "B. Aumento", "C. Constante", "D. Error"], correcta: 1, seccion: "🔢 Razonamiento Cuantitativo" },
+        { texto: "18. Regla de tres directa se usa cuando:", opciones: ["A. Relación inversa", "B. Relación proporcional", "C. No hay relación", "D. Es aleatoria"], correcta: 1, seccion: "🔢 Razonamiento Cuantitativo" },
+        { texto: "19. Área de un cuadrado lado 4:", opciones: ["A. 8", "B. 12", "C. 16", "D. 20"], correcta: 2, seccion: "🔢 Razonamiento Cuantitativo" },
+        { texto: "20. Si duplicas un número y sumas 2 obtienes 10, número =", opciones: ["A. 3", "B. 4", "C. 5", "D. 6"], correcta: 1, seccion: "🔢 Razonamiento Cuantitativo" },
+        // COMPETENCIAS CIUDADANAS (21-30) todas correcta indice 1 (B) excepto 27B y 30B también indice 1
+        { texto: "21. ¿Qué es ciudadanía?", opciones: ["A. Solo votar", "B. Participar en sociedad", "C. Trabajar", "D. Estudiar"], correcta: 1, seccion: "🏛️ Competencias Ciudadanas" },
+        { texto: "22. Un conflicto se resuelve mejor con:", opciones: ["A. Violencia", "B. Diálogo", "C. Ignorar", "D. Evadir"], correcta: 1, seccion: "🏛️ Competencias Ciudadanas" },
+        { texto: "23. ¿Qué es un derecho?", opciones: ["A. Obligación", "B. Beneficio legal", "C. Castigo", "D. Regla"], correcta: 1, seccion: "🏛️ Competencias Ciudadanas" },
+        { texto: "24. La tolerancia implica:", opciones: ["A. Imponer ideas", "B. Respetar diferencias", "C. Ignorar", "D. Criticar"], correcta: 1, seccion: "🏛️ Competencias Ciudadanas" },
+        { texto: "25. Democracia significa:", opciones: ["A. Poder militar", "B. Poder del pueblo", "C. Poder económico", "D. Poder judicial"], correcta: 1, seccion: "🏛️ Competencias Ciudadanas" },
+        { texto: "26. Un deber ciudadano es:", opciones: ["A. No participar", "B. Cumplir normas", "C. Evadir leyes", "D. Ignorar reglas"], correcta: 1, seccion: "🏛️ Competencias Ciudadanas" },
+        { texto: "27. La equidad busca:", opciones: ["A. Igualdad estricta", "B. Justicia según contexto", "C. Beneficio individual", "D. Desigualdad"], correcta: 1, seccion: "🏛️ Competencias Ciudadanas" },
+        { texto: "28. Un conflicto social surge por:", opciones: ["A. Acuerdos", "B. Diferencias", "C. Igualdad", "D. Paz"], correcta: 1, seccion: "🏛️ Competencias Ciudadanas" },
+        { texto: "29. La participación ciudadana incluye:", opciones: ["A. Solo votar", "B. Opinar y actuar", "C. Ignorar", "D. Evadir"], correcta: 1, seccion: "🏛️ Competencias Ciudadanas" },
+        { texto: "30. Derechos humanos son:", opciones: ["A. Opcionales", "B. Universales", "C. Limitados", "D. Privados"], correcta: 1, seccion: "🏛️ Competencias Ciudadanas" },
+        // 31. ESCRITURA (manual) - no tiene opciones multi, se trata aparte en el DOM
+        { texto: "31. ✍️ Escribe un texto argumentativo (mínimo 150 palabras): ¿La tecnología mejora o empeora la calidad de vida? Debe incluir: tesis clara, 2 argumentos, conclusión.", opciones: [], correcta: null, esEscritura: true, seccion: "✍️ Escritura" },
+        // INGLÉS (32-50) según clave
+        { texto: "32. “She ___ to school every day.”", opciones: ["A. go", "B. goes", "C. going", "D. gone"], correcta: 1, seccion: "🇬🇧 Inglés" },
+        { texto: "33. “They ___ playing soccer.”", opciones: ["A. is", "B. are", "C. am", "D. be"], correcta: 1, seccion: "🇬🇧 Inglés" },
+        { texto: "34. “I have ___ apple.”", opciones: ["A. a", "B. an", "C. the", "D. none"], correcta: 1, seccion: "🇬🇧 Inglés" },
+        { texto: "35. Past of “go”:", opciones: ["A. goed", "B. went", "C. gone", "D. going"], correcta: 1, seccion: "🇬🇧 Inglés" },
+        { texto: "36. “He ___ tired yesterday.”", opciones: ["A. is", "B. was", "C. were", "D. be"], correcta: 1, seccion: "🇬🇧 Inglés" },
+        { texto: "37. Traducción: “casa”", opciones: ["A. house", "B. car", "C. dog", "D. table"], correcta: 0, seccion: "🇬🇧 Inglés" },
+        { texto: "38. “We ___ studying now.”", opciones: ["A. is", "B. are", "C. am", "D. be"], correcta: 1, seccion: "🇬🇧 Inglés" },
+        { texto: "39. “She has ___ book.”", opciones: ["A. a", "B. an", "C. the", "D. none"], correcta: 0, seccion: "🇬🇧 Inglés" },
+        { texto: "40. “I ___ like coffee.”", opciones: ["A. do", "B. does", "C. did", "D. done"], correcta: 0, seccion: "🇬🇧 Inglés" },
+        { texto: "41. “They ___ finished.”", opciones: ["A. has", "B. have", "C. had", "D. having"], correcta: 1, seccion: "🇬🇧 Inglés" },
+        { texto: "42. Traducción: “perro”", opciones: ["A. dog", "B. cat", "C. bird", "D. fish"], correcta: 0, seccion: "🇬🇧 Inglés" },
+        { texto: "43. “He ___ eating.”", opciones: ["A. is", "B. are", "C. am", "D. be"], correcta: 0, seccion: "🇬🇧 Inglés" },
+        { texto: "44. “We ___ friends.”", opciones: ["A. is", "B. are", "C. am", "D. be"], correcta: 1, seccion: "🇬🇧 Inglés" },
+        { texto: "45. “She ___ a car.”", opciones: ["A. have", "B. has", "C. had", "D. having"], correcta: 1, seccion: "🇬🇧 Inglés" },
+        { texto: "46. “I ___ to eat.”", opciones: ["A. want", "B. wants", "C. wanted", "D. wanting"], correcta: 0, seccion: "🇬🇧 Inglés" },
+        { texto: "47. “They ___ here.”", opciones: ["A. is", "B. are", "C. am", "D. be"], correcta: 1, seccion: "🇬🇧 Inglés" },
+        { texto: "48. “He ___ running.”", opciones: ["A. is", "B. are", "C. am", "D. be"], correcta: 0, seccion: "🇬🇧 Inglés" },
+        { texto: "49. “I ___ English.”", opciones: ["A. speak", "B. speaks", "C. speaking", "D. spoken"], correcta: 0, seccion: "🇬🇧 Inglés" },
+        { texto: "50. Traducción: “libro”", opciones: ["A. book", "B. pen", "C. table", "D. chair"], correcta: 0, seccion: "🇬🇧 Inglés" }
     ];
 
-    // IDs de radio únicos se construyen dinámicamente: q{idx}_opt{optIndex}
-    // Variable global para mantener estado y re-renderizar opciones
-    let respuestasSeleccionadas = new Array(preguntasData.length).fill(null); // guarda el índice de opción elegida (0..3)
+    // estados: opciones seleccionadas para cada pregunta (indice de opción o null)
+    let respuestas = new Array(preguntasData.length).fill(null);
+    let textoEscritura = "";  // para la pregunta 31 (índice 30)
 
-    // Contenedores
-    const preguntasHolder = document.getElementById('preguntas-holder');
-    const resultadoArea = document.getElementById('resultado-area');
+    const root = document.getElementById("preguntasRoot");
+    const resultadosPanel = document.getElementById("resultadosPanel");
 
-    // Función para renderizar todas las preguntas con los radio buttons según estado actual
-    function renderizarPreguntas() {
-        if (!preguntasHolder) return;
-        let html = '';
-        let seccionActual = '';
-        let contadorSeccion = 1;
-
-        // Definimos las secciones para agrupar visualmente (opcional pero limpio)
-        const rangosSecciones = [
-            { nombre: "📘 Sección 1 — Lectura Crítica", inicio: 0, fin: 2 },    // preguntas 1,2
-            { nombre: "💻 Sección 2 — Lógica de Programación", inicio: 2, fin: 4 }, // 3,4
-            { nombre: "🗄️ Sección 3 — Bases de Datos (SQL)", inicio: 4, fin: 6 },   // 5,6
-            { nombre: "🧩 Sección 4 — Modelado de Datos", inicio: 6, fin: 8 },       // 7,8
-            { nombre: "🖥️ Sección 5 — Hardware y Software", inicio: 8, fin: 10 }     // 9,10
-        ];
-
-        for (let sec of rangosSecciones) {
-            html += `<div class="seccion"><div class="seccion-titulo">${sec.nombre}</div>`;
-            for (let idx = sec.inicio; idx < sec.fin; idx++) {
-                const p = preguntasData[idx];
-                const seleccionadoActual = respuestasSeleccionadas[idx];
-                // construcción de opciones
-                let opcionesHtml = '';
+    function renderizarTodo() {
+        if (!root) return;
+        let html = "";
+        let currentSeccion = "";
+        for (let i = 0; i < preguntasData.length; i++) {
+            const p = preguntasData[i];
+            if (p.seccion !== currentSeccion) {
+                currentSeccion = p.seccion;
+                html += `<div class="seccion"><div class="seccion-titulo">${currentSeccion}</div>`;
+            }
+            // para escritura (pregunta 31) renderizamos textarea
+            if (p.esEscritura) {
+                html += `
+                    <div class="pregunta">
+                        <div class="pregunta-texto">${p.texto}</div>
+                        <textarea id="textarea_escritura" rows="6" placeholder="Escribe aquí tu texto argumentativo (mínimo 150 palabras)...">${escapeHtml(textoEscritura)}</textarea>
+                        <div style="font-size:0.75rem; color:#2c7da0; margin-top:5px;">✅ Recuerda incluir tesis, dos argumentos y conclusión.</div>
+                    </div>
+                `;
+            } else {
+                const selectedIdx = respuestas[i];
+                let opcionesHtml = "";
                 p.opciones.forEach((opt, optIndex) => {
-                    const radioId = `q${idx}_opt${optIndex}`;
-                    const isChecked = (seleccionadoActual === optIndex);
+                    const idRadio = `q${i}_opt${optIndex}`;
+                    const checkedAttr = (selectedIdx === optIndex) ? "checked" : "";
                     opcionesHtml += `
-                        <div class="opcion" data-qidx="${idx}" data-optidx="${optIndex}">
-                            <input type="radio" name="pregunta_${idx}" id="${radioId}" value="${optIndex}" ${isChecked ? 'checked' : ''}>
-                            <label for="${radioId}">${opt}</label>
+                        <div class="opcion">
+                            <input type="radio" name="preg_${i}" id="${idRadio}" value="${optIndex}" ${checkedAttr}>
+                            <label for="${idRadio}">${opt}</label>
                         </div>
                     `;
                 });
                 html += `
-                    <div class="pregunta" id="pregunta-${idx}">
+                    <div class="pregunta">
                         <div class="pregunta-texto">${p.texto}</div>
-                        <div class="opciones">
-                            ${opcionesHtml}
-                        </div>
+                        <div class="opciones">${opcionesHtml}</div>
                     </div>
                 `;
             }
-            html += `</div>`; // cierra .seccion
+            if (i === preguntasData.length-1 || (i+1 < preguntasData.length && preguntasData[i+1].seccion !== currentSeccion)) {
+                html += `</div>`; // cierre seccion
+            }
         }
+        root.innerHTML = html;
 
-        preguntasHolder.innerHTML = html;
-
-        // Después de inyectar el HTML, adjuntamos event listeners a cada radio button de manera dinámica
-        // con delegación o attaching directo. Usamos event delegation más robusto sobre el contenedor de preguntas.
-        // Pero además para mejorar la experiencia y actualizar nuestro array respuestasSeleccionadas
-        // Lo haremos con el contenedor padre usando 'change' (delegación)
-        if (preguntasHolder) {
-            // Remover listener anterior para evitar duplicados, pero lo asignaremos de nuevo
-            preguntasHolder.removeEventListener('change', handleRadioChange);
-            preguntasHolder.addEventListener('change', handleRadioChange);
+        // eventos para cambios radio (delegación)
+        root.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.removeEventListener('change', manejarCambioRadio);
+            radio.addEventListener('change', manejarCambioRadio);
+        });
+        const textareaElem = document.getElementById("textarea_escritura");
+        if (textareaElem) {
+            textareaElem.removeEventListener("input", manejarTexto);
+            textareaElem.addEventListener("input", manejarTexto);
         }
     }
 
-    // Manejador para capturar cambios en los radio buttons y actualizar el estado
-    function handleRadioChange(event) {
-        const target = event.target;
-        if (target && target.type === 'radio') {
-            // obtenemos el name: "pregunta_0" ... extraemos el índice
-            const nameAttr = target.name;
-            if (nameAttr && nameAttr.startsWith('pregunta_')) {
-                const qIndex = parseInt(nameAttr.split('_')[1], 10);
-                const selectedVal = parseInt(target.value, 10);
-                if (!isNaN(qIndex) && !isNaN(selectedVal)) {
-                    respuestasSeleccionadas[qIndex] = selectedVal;
-                }
+    function manejarCambioRadio(e) {
+        const radio = e.target;
+        if (radio.type === 'radio') {
+            const name = radio.name; // preg_<idx>
+            const idx = parseInt(name.split('_')[1], 10);
+            if (!isNaN(idx)) {
+                respuestas[idx] = parseInt(radio.value, 10);
             }
         }
     }
 
-    // Calcular puntaje y mostrar resultados (interpretación y respuestas correctas extra)
-    function calcularYMostrarResultado() {
+    function manejarTexto(e) {
+        textoEscritura = e.target.value;
+    }
+
+    function escapeHtml(str) {
+        if (!str) return "";
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
+        });
+    }
+
+    function calcularResultados() {
         let aciertos = 0;
-        const detalles = [];
-
+        let totalEvaluadas = 0;
+        // recorremos excepto la de escritura (índice 30)
         for (let i = 0; i < preguntasData.length; i++) {
-            const seleccionada = respuestasSeleccionadas[i];
-            const correctaIdx = preguntasData[i].correcta;
-            const esCorrecta = (seleccionada !== null && seleccionada === correctaIdx);
-            if (esCorrecta) aciertos++;
+            const p = preguntasData[i];
+            if (p.esEscritura) continue;
+            const seleccion = respuestas[i];
+            if (seleccion !== null && p.correcta === seleccion) {
+                aciertos++;
+            }
+            if (seleccion !== null) totalEvaluadas++;
+        }
+        const totalPreguntasCerradas = preguntasData.filter(p => !p.esEscritura).length; // 49 preguntas
+        const puntaje = aciertos;
+        let interpretacion = "";
+        if (puntaje >= 40) interpretacion = "✅ 40–50 correctas: ¡Estás listo! Dominas el conocimiento.";
+        else if (puntaje >= 30) interpretacion = "⚠️ 30–39 correctas: Bien, pero ajusta lectura + lógica.";
+        else interpretacion = "🔻 <30 correctas: Refuerza lectura, lógica y ciudadanas urgentemente.";
 
-            // Para feedback de cada pregunta (podemos mostrarlo en resumen expandido)
-            detalles.push({
-                index: i,
-                textoPreview: preguntasData[i].texto.substring(0, 70) + (preguntasData[i].texto.length > 70 ? '…' : ''),
-                seleccionada: seleccionada,
-                correctaIdx: correctaIdx,
-                esCorrecta: esCorrecta,
-                letraCorrecta: String.fromCharCode(65 + correctaIdx), // A,B,C,D
-                letraElegida: seleccionada !== null ? String.fromCharCode(65 + seleccionada) : '—'
-            });
+        let mensajeEscritura = "";
+        if (textoEscritura.trim().length < 140) {
+            mensajeEscritura = "📝 Tu texto argumentativo parece corto (mínimo 150 palabras recomendado). Revisa tesis, argumentos y conclusión.";
+        } else {
+            mensajeEscritura = "📝 Texto completado. Evalúa si tiene tesis clara, dos argumentos y conclusión (autoevaluación).";
         }
 
-        const total = preguntasData.length;
-        const porcentaje = Math.round((aciertos / total) * 100);
-        let interpretacion = '';
-        let mensajeExtra = '';
-
-        if (aciertos >= 8) interpretacion = '✅ 8–10 correctas: Vas sólido. ¡Excelente! Sigue practicando así.';
-        else if (aciertos >= 5) interpretacion = '⚠️ 5–7 correctas: Nivel medio, puedes mejorar. Revisa SQL y lógica.';
-        else interpretacion = '🔻 <5 correctas: Te falta base clave (enfócate en lógica + lectura). Repasa conceptos.';
-
-        mensajeExtra = `💡 ${aciertos===10 ? '¡Perfecto! Dominas el temario.' : (aciertos>=8 ? 'Muy buen desempeño.' : (aciertos>=5 ? '¡Sigue practicando!' : 'Ánimo, refuerza fundamentos.'))}`;
-
-        // construir HTML de resultados con lista detallada opcional (plegable)
-        let detallesHtml = `<div style="margin-top: 1rem;"><details><summary style="cursor:pointer; font-weight:600; color:#1f5e7a;">📋 Ver desglose por pregunta</summary>
-        <div style="margin-top: 10px; font-size:0.85rem; background:white; border-radius: 1rem; padding: 0.5rem;">`;
-        for (let d of detalles) {
-            const estadoIcon = d.esCorrecta ? '✅' : '❌';
-            const respuestaMostrar = d.seleccionada !== null ? d.letraElegida : 'sin responder';
-            detallesHtml += `
-                <div style="display:flex; align-items: baseline; border-bottom: 1px solid #e2e8f0; padding: 0.4rem 0;">
-                    <span style="min-width: 40px; font-weight:bold;">${estadoIcon} P${d.index+1}:</span>
-                    <span style="flex:1; margin-left: 8px;">${d.textoPreview}</span>
-                    <span style="font-family: monospace; background:#f1f5f9; padding: 2px 6px; border-radius: 30px;">Tu: ${respuestaMostrar} | Correcta: ${d.letraCorrecta}</span>
-                </div>
-            `;
+        let noRespondidas = [];
+        for (let i = 0; i < preguntasData.length; i++) {
+            if (!preguntasData[i].esEscritura && respuestas[i] === null) noRespondidas.push(i+1);
         }
-        detallesHtml += `</div></details></div>`;
+        const avisoNoResp = noRespondidas.length ? `⚠️ Preguntas sin responder: ${noRespondidas.join(", ")}.` : "✅ Todas las preguntas cerradas respondidas.";
 
-        const puntajeHtml = `
+        const htmlResult = `
             <div class="resultado-card">
-                <div class="puntaje">🎯 ${aciertos} / ${total} aciertos  (${porcentaje}%)</div>
-                <div class="interpretacion">📊 Interpretación: ${interpretacion}</div>
-                <div class="feedback-final">${mensajeExtra}</div>
-                ${detallesHtml}
+                <div class="puntaje">🎯 ${puntaje} / ${totalPreguntasCerradas} aciertos</div>
+                <div>📊 ${interpretacion}</div>
+                <div style="margin-top: 8px;">${avisoNoResp}</div>
+                <div style="margin-top: 6px;">✍️ Escritura: ${mensajeEscritura}</div>
                 <hr>
-                <div style="font-size:0.85rem; margin-top: 5px;">📌 Respuestas rápidas oficiales: 1B 2C 3B 4B 5B 6B 7B 8B 9C 10B</div>
+                <details><summary style="cursor:pointer; font-weight:600;">📌 Ver respuestas oficiales (clave rápida)</summary>
+                <div style="margin-top: 10px; font-size:0.85rem; background:white; border-radius: 1rem; padding: 0.7rem;">
+                Lectura: 1B,2B,3B,4B,5B,6B,7B,8B,9C,10B<br>
+                Cuantit: 11B,12A,13B,14B,15B,16B,17B,18B,19C,20B<br>
+                Ciudadanas: todas B<br>
+                Inglés: 32B,33B,34B,35B,36B,37A,38B,39A,40A,41B,42A,43A,44B,45B,46A,47B,48A,49A,50A
+                </div>
+                </details>
+                <div style="font-size:0.85rem; margin-top:12px;">💡 Recuerda: la pregunta 31 (escritura) se califica de forma cualitativa.</div>
             </div>
         `;
-        resultadoArea.innerHTML = puntajeHtml;
-        // scroll suave hacia resultados
-        resultadoArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        resultadosPanel.innerHTML = htmlResult;
+        resultadosPanel.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
-    // Reiniciar todas las respuestas
-    function reiniciarRespuestas() {
-        respuestasSeleccionadas = new Array(preguntasData.length).fill(null);
-        // re-renderizar preguntas para borrar radios checkeados
-        renderizarPreguntas();
-        // limpiar area de resultados
-        resultadoArea.innerHTML = '';
-        // Opcional: Mensaje de reinicio leve
-        const tempMsg = document.createElement('div');
-        tempMsg.style.backgroundColor = '#d4edda';
-        tempMsg.style.color = '#155724';
-        tempMsg.style.padding = '0.6rem';
-        tempMsg.style.borderRadius = '2rem';
-        tempMsg.style.margin = '1rem 0 0';
-        tempMsg.style.textAlign = 'center';
-        tempMsg.innerText = '✨ Todas las respuestas han sido reiniciadas. ¡Puedes volver a intentarlo!';
-        resultadoArea.appendChild(tempMsg);
-        setTimeout(() => {
-            if (resultadoArea.firstChild === tempMsg) resultadoArea.innerHTML = '';
-        }, 2000);
+    function reiniciarTodo() {
+        respuestas.fill(null);
+        textoEscritura = "";
+        renderizarTodo();
+        resultadosPanel.innerHTML = "";
+        const textareaNuevo = document.getElementById("textarea_escritura");
+        if (textareaNuevo) textareaNuevo.value = "";
     }
 
-    // Eventos de los botones principales
-    function bindGlobalButtons() {
-        const btnCalificar = document.getElementById('btn-calificar');
-        const btnReiniciar = document.getElementById('btn-reiniciar');
-        if (btnCalificar) {
-            btnCalificar.removeEventListener('click', calcularYMostrarResultado);
-            btnCalificar.addEventListener('click', calcularYMostrarResultado);
-        }
-        if (btnReiniciar) {
-            btnReiniciar.removeEventListener('click', reiniciarRespuestas);
-            btnReiniciar.addEventListener('click', reiniciarRespuestas);
-        }
-    }
-
-    // Inicializar página
-    function init() {
-        renderizarPreguntas();
-        bindGlobalButtons();
-        // Si queremos asegurar que al cargar no haya resultados viejos
-        resultadoArea.innerHTML = '';
-    }
-
-    init();
+    // inicializar y bindear botones
+    renderizarTodo();
+    document.getElementById("calificarBtn")?.addEventListener("click", calcularResultados);
+    document.getElementById("reiniciarBtn")?.addEventListener("click", reiniciarTodo);
 </script>
 </body>
 </html>
